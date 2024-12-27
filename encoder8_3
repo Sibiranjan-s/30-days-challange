@@ -1,0 +1,8 @@
+module encoder8_3(
+input [7:0]y,
+output a2,a1,a0
+);
+assign a2=y[7] | y[6] | y[5] | y[4];
+assign a1=y[7] | y[6] | y[3] | y[2];
+assign a0=y[7] | y[5] | y[3] | y[1];
+endmodule
