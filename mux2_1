@@ -1,0 +1,23 @@
+//gate level modeling
+module mux2_1(
+input a,b,c,
+output y);
+wire w1,w2;
+assign w1=a&~c;
+assign w2=b&c;
+assign y=w1|w2;
+endmodule
+
+//behavioural level model
+/*module mux2_1(
+input a,b,c,
+output reg y);
+reg w1,w2;
+always@(*)
+begin
+w1=a&~c;
+ w2=b&c;
+ y=w1|w2;
+end
+endmodule
+*/
