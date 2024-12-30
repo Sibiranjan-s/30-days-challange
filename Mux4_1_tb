@@ -6,6 +6,9 @@ mux4_1 uut(.a(a),.b(b),.c(c),.d(d),.selectline1(selectline1),.selectline2(select
 initial
 begin
 a=1'b0;b=1'b0;c=1'b0;d=1'b0;
+a=1'b0;b=1'b1;c=1'b0;d=1'b1;
+a=1'b1;b=1'b0;c=1'b1;d=1'b0;
+a=1'b1;b=1'b1;c=1'b1;d=1'b1;
 
 #10 selectline1=1'b0;selectline2=1'b0;
 #10 selectline1=1'b0;selectline2=1'b1;
