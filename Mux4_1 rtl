@@ -1,0 +1,11 @@
+module mux4_1(
+input a,b,c,d,
+input selectline1,selectline2,//select line
+output y);
+wire w1,w2,w3,w4;
+assign w1=a&selectline2&d;
+assign w2=selectline1&selectline2&~d;
+assign w3=b&~selectline2&d;
+assign w4=c&~selectline2&~d;
+assign y=w1|w2|w3|w4;
+endmodule
