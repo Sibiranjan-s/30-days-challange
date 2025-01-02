@@ -1,0 +1,17 @@
+module SR_flipflop_tb;
+reg set,rst,clk;
+wire q,qs;
+SR_flipflop uut(.set(set),.rst(rst),.clk(clk),.q(q),.qs(qs));
+initial 
+begin
+clk = 0;           
+forever #5 clk = ~clk;  
+end
+initial
+begin
+#10 set=1'b0;rst=1'b0;
+#10 set=1'b0;rst=1'b1;
+#10 set=1'b1;rst=1'b0;
+#10 set=1'b1;rst=1'b1;
+end
+endmodule
