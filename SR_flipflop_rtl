@@ -1,0 +1,25 @@
+module SR_flipflop(
+input set,rst,clk,
+output reg q,
+output reg qs
+);
+always@(posedge clk)
+begin
+if(set==1'b1 && rst==1'b0)
+begin
+q<=1'b1;qs<=1'b0;
+end
+else if (set==1'b0 && rst==1'b1)
+begin
+q<=1'b0;qs<=1'b1;
+end
+else if(set==1'b0 && rst==1'b0)
+begin
+q<=q;qs<=qs;
+end
+else 
+begin
+q=1'bx;qs=1'bx;
+end
+end
+endmodule
