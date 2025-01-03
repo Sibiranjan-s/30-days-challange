@@ -1,0 +1,17 @@
+module JK_flipflop_tb;
+reg j,k,clk,rst;
+wire q,qs;
+JK_flipflop uut(.j(j),.k(k),.clk(clk),.rst(rst),.q(q),.qs(qs));
+initial
+begin
+clk=0;
+forever #5 clk=~clk;
+end
+initial
+begin
+#10 j=1'b0;k=1'b0;
+#10 j=1'b0;k=1'b1;
+#10 j=1'b1;k=1'b0;
+#10 j=1'b1;k=1'b1;
+end
+endmodule
