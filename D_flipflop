@@ -1,0 +1,13 @@
+module D_flipflop(
+input d,clk,rst,
+output qs,
+output reg q);
+assign qs=~q;
+always@(posedge clk)
+begin
+if(!rst)
+q<=0;
+else
+q<=d;
+end
+endmodule
