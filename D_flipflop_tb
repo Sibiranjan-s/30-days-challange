@@ -1,0 +1,22 @@
+
+module D_flipflop_tb;
+reg d;
+reg rst;
+reg clk;
+wire q;
+D_flipflop uut(.d(d),.rst(reset),.clk(clk));
+initial begin
+clk=0;
+forever #5 clk=~clk;
+end
+initial begin
+rst=0;
+d=0;
+#10 rst=1;
+#10 rst=0;
+#10 d=1;
+#20 d=0;
+#20 d=1;
+#40 $finish;
+end
+endmodule
