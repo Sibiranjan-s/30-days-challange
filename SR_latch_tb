@@ -1,0 +1,12 @@
+module SR_latch_tb;
+reg s,r;
+wire q,qs;
+SR_latch uut(.s(s),.r(r),.q(q),.qs(qs));
+initial
+begin
+#10 s=0;r=0;
+#5 s=0;r=1;
+#20  s=1;r=0;
+#10 s=1;r=1;
+end
+endmodule
