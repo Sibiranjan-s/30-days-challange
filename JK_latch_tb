@@ -1,0 +1,12 @@
+module JK_latch_tb;
+reg j,k;
+wire q,qs;
+JK_latch uut(.j(j),.k(k),.q(q),.qs(qs));
+initial
+begin
+#10 j=0;k=0;
+#5 j=0;k=1;
+#20  j=1;k=0;
+#10 j=1;k=1;
+end
+endmodule
