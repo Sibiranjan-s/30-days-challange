@@ -1,0 +1,10 @@
+module JK_latch(
+input j,k,
+output q,qs
+);
+wire w1,w2;
+assign w1=j&q;
+assign w2=k&qs;
+assign q=~(w1|qs);
+assign qs=~(w2|q);
+endmodule
