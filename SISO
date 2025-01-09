@@ -1,0 +1,14 @@
+module SISO(
+input data_in,
+input clk,
+output data_out);
+reg w1,w2,w3,w4;
+always@(posedge clk)
+begin
+w1<=data_in;
+w2<=w1;
+w3<=w2;
+w4<=w3;
+end
+assign data_out=w4;
+endmodule
