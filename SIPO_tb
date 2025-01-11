@@ -1,0 +1,24 @@
+module SIPO_tb;
+reg clk,clr,dff;
+wire [3:0]q;
+
+SIPO dut(.clk(clk),.clr(clr),.dff(dff),.q(q));
+initial
+begin
+clk=0;
+forever #5 clk=~clk;
+end
+initial
+begin
+clr=1;
+#5 clr=0;
+#10 dff=1;
+#10 dff=0;
+#10 dff=1;
+#10 dff=0;
+#10 dff=1;
+#10 dff=1;
+#10 dff=0;
+end
+endmodule
+ 
