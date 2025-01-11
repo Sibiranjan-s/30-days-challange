@@ -1,0 +1,14 @@
+module SIPO(
+input clk,clr,dff,
+output reg [3:0]q,
+output reg [3:0] temp
+);
+always@(posedge clk)
+if (clr==1)
+q=4'b0000;
+else
+begin
+temp=q>>1;
+q={dff,temp[2:0]};
+end
+endmodule
