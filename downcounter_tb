@@ -1,0 +1,20 @@
+
+module downcounter_tb;
+reg clk,rst;
+wire count;
+downcounter uut(.clk(clk),.rst(rst),.count(count));
+initial
+begin
+clk=0;
+forever #5 clk=~clk;
+end
+initial
+begin
+clk=0;
+rst =1;
+
+//#100 clk=1;
+#20 rst=1;
+#40 rst=0;
+end
+endmodule
