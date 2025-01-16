@@ -1,0 +1,21 @@
+module updown(
+input clk,rst,
+output reg count
+);
+always@(posedge clk)
+begin
+if(!rst)
+begin
+count<=count+1;
+end
+else if(rst)
+begin
+//count<=count-1;
+count<=4'b0000;
+end
+else
+begin
+count<=count-1;
+end
+end
+endmodule
