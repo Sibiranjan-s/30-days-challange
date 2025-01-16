@@ -1,0 +1,20 @@
+module updown_tb;
+reg clk, rst;
+wire count;
+updown uut(.clk(clk), .rst(rst), .count(count));
+
+initial begin
+    clk = 0;
+    forever #5 clk = ~clk;
+end
+
+initial begin
+    rst = 1;
+   // count = 1;
+    #30 rst = 0;
+   // #50 count = 0;
+    //#60 count = 1;
+    #20 rst = 1;
+    #30 rst = 0;
+end
+endmodule
