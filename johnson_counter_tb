@@ -1,0 +1,18 @@
+module johnson_counter_tb;
+reg clk;
+reg clr;
+wire [3:0]q;
+johnson_counter uut (.clk(clk),.clr(clr),.q(q));
+initial
+begin
+clk=0;
+forever #5 clk=~clk;
+end
+initial
+begin
+#50 clr=1;
+#40 clr=0;
+#50 clr=1;
+#40 clr=0;
+end
+endmodule
