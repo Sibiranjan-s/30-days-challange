@@ -1,0 +1,18 @@
+module modn_counter_tb;
+reg clk,rst;
+wire [3:0]q;
+modn_counter uut(.clk(clk),.rst(rst),.q(q));
+initial
+begin
+clk=0;
+forever #5 clk=~clk;
+end
+initial
+begin 
+#50 rst=1;
+#30 rst=0;
+#200;
+#40 rst=1;
+#10 rst=0;
+end
+endmodule
