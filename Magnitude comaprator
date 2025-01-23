@@ -1,0 +1,10 @@
+module magnitude_comparator(
+input [3:0]a,
+input [3:0]b,
+output a_greater,
+output a_lesser,
+output a_equal);
+assign a_greater=a>b;
+assign a_lesser=a<b;
+assign a_equal=a==b;
+endmodule
