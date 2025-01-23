@@ -1,0 +1,16 @@
+module magnitude_comparator_tb;
+reg [3:0]a;
+reg [3:0]b;
+wire a_greater;
+wire a_lesser;
+wire a_equal;
+magnitude_comparator uut(.a(a),.b(b),.a_greater(a_greater),.a_lesser(a_lesser),.a_equal(a_equal));
+initial
+begin
+a=4'b0;
+b=4'b0;
+#50 a=4'b1001;b=4'b1111;
+#50 a=4'b1001;b=4'b1001;
+#50 a=4'b1111;b=4'b1000;
+end
+endmodule
