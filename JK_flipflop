@@ -16,10 +16,7 @@ else if(j==1'b1 && k==1'b0)
 begin
 q<=1'b1;qs<=1'b0;
 end
-else if(rst)
-begin
-q<=0;
-end
+
 else
 begin
 q<=~q;qs<=~qs;
